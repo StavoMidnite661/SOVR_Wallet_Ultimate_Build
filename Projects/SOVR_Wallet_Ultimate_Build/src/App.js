@@ -5,6 +5,7 @@ import CheckGenerator from './components/CheckGenerator';
 import SignaturePad from './components/SignaturePad';
 import AdminPanel from './components/AdminPanel';
 import P2PBridgePanel from './components/P2PBridgePanel';
+import ZellePayout from './components/ZellePayout';
 import CheckReceiptPDF from './components/CheckReceiptPDF'; // Add this line
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
       case 'sign': return <SignaturePad />;
       case 'admin': return <AdminPanel />;
       case 'bridge': return <P2PBridgePanel />;
+      case 'zelle': return <ZellePayout />;
       default: return <p>Select a tab to begin.</p>;
     }
   };
@@ -39,6 +41,7 @@ const App = () => {
         <button onClick={() => setTab('sign')}>Signature</button>
         <button onClick={() => setTab('admin')}>Admin</button>
         <button onClick={() => setTab('bridge')}>P2P Bridge</button>
+        <button onClick={() => setTab('zelle')}>Zelle</button>
       </nav>
       <div className="tab-content">{renderTab()}</div>
     </div>
